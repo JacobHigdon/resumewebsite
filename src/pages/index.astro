@@ -1,0 +1,172 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const skills = ["JavaScript", "TypeScript", "React", "Node.js", "Python", "AWS"];
+---
+
+<Layout title="Jake Smith - Software Engineer" active="Home">
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <p class="greeting">Hi, I'm</p>
+        <h1>Jake Smith</h1>
+        <h2>Software Engineer</h2>
+        <p class="bio">
+          I build things for the web. Passionate about creating elegant solutions
+          to complex problems and crafting exceptional digital experiences.
+        </p>
+        <div class="hero-buttons">
+          <a href="/resumewebsite/projects" class="btn btn-primary">View My Work</a>
+          <a href="/resumewebsite/contact" class="btn btn-outline">Get In Touch</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="about section">
+    <div class="container">
+      <h2 class="section-title">About Me</h2>
+      <div class="about-content">
+        <p>
+          I'm a software engineer based in San Francisco with over 5 years of experience
+          building web applications. I enjoy turning complex problems into simple,
+          beautiful, and intuitive solutions.
+        </p>
+        <p>
+          When I'm not coding, you'll find me exploring new technologies, contributing
+          to open source projects, or enjoying the outdoors.
+        </p>
+        <div class="skills">
+          <h3>Technologies I work with:</h3>
+          <ul class="skill-list">
+            {skills.map((skill) => (
+              <li>{skill}</li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta section">
+    <div class="container">
+      <div class="cta-box">
+        <h2>Interested in working together?</h2>
+        <p>I'm always open to discussing new projects and opportunities.</p>
+        <a href="/resumewebsite/contact" class="btn btn-primary">Let's Talk</a>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .hero {
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    background: linear-gradient(135deg, #f5f7fa 0%, #e4e8ec 100%);
+  }
+
+  .hero-content {
+    max-width: 600px;
+  }
+
+  .greeting {
+    color: var(--primary);
+    font-weight: 500;
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .hero h1 {
+    font-size: 4rem;
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 0.5rem;
+  }
+
+  .hero h2 {
+    font-size: 2rem;
+    color: var(--text-light);
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+  }
+
+  .bio {
+    font-size: 1.2rem;
+    color: var(--text-light);
+    margin-bottom: 2rem;
+    max-width: 500px;
+  }
+
+  .hero-buttons {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .about-content {
+    max-width: 700px;
+  }
+
+  .about-content p {
+    font-size: 1.1rem;
+    color: var(--text-light);
+    margin-bottom: 1.5rem;
+  }
+
+  .skills h3 {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .skill-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    list-style: none;
+  }
+
+  .skill-list li {
+    background: var(--bg-alt);
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    border: 1px solid var(--border);
+  }
+
+  .cta {
+    background: var(--bg-alt);
+  }
+
+  .cta-box {
+    text-align: center;
+    padding: 3rem;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+  }
+
+  .cta-box h2 {
+    margin-bottom: 0.5rem;
+  }
+
+  .cta-box p {
+    color: var(--text-light);
+    margin-bottom: 1.5rem;
+  }
+
+  @media (max-width: 768px) {
+    .hero h1 {
+      font-size: 2.5rem;
+    }
+
+    .hero h2 {
+      font-size: 1.5rem;
+    }
+
+    .bio {
+      font-size: 1rem;
+    }
+  }
+</style>

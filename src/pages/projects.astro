@@ -1,0 +1,156 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const projects = [
+  {
+    title: "E-Commerce Platform",
+    description: "A full-stack e-commerce solution with real-time inventory management, payment processing, and admin dashboard.",
+    tech: ["React", "Node.js", "PostgreSQL", "Stripe"],
+    github: "https://github.com",
+    demo: "https://example.com"
+  },
+  {
+    title: "Task Management App",
+    description: "A collaborative project management tool with real-time updates, team workspaces, and integrations.",
+    tech: ["TypeScript", "Next.js", "Prisma", "WebSockets"],
+    github: "https://github.com",
+    demo: "https://example.com"
+  },
+  {
+    title: "Weather Dashboard",
+    description: "A beautiful weather application with location-based forecasts, interactive maps, and severe weather alerts.",
+    tech: ["Vue.js", "Python", "FastAPI", "Redis"],
+    github: "https://github.com",
+  },
+  {
+    title: "Developer Portfolio",
+    description: "A customizable portfolio template for developers, featuring blog integration and project showcases.",
+    tech: ["Astro", "Tailwind", "MDX"],
+    github: "https://github.com",
+    demo: "https://example.com"
+  },
+  {
+    title: "API Gateway",
+    description: "A high-performance API gateway with rate limiting, authentication, and request transformation.",
+    tech: ["Go", "Redis", "Docker", "Kubernetes"],
+    github: "https://github.com",
+  },
+  {
+    title: "Chat Application",
+    description: "Real-time messaging platform with end-to-end encryption, file sharing, and video calls.",
+    tech: ["React Native", "Firebase", "WebRTC"],
+    github: "https://github.com",
+    demo: "https://example.com"
+  }
+];
+---
+
+<Layout title="Projects - Jake Smith" active="Projects">
+  <section class="section">
+    <div class="container">
+      <h1 class="section-title">Projects</h1>
+      <p class="intro">Here are some of the projects I've worked on. Each one taught me something new and helped me grow as a developer.</p>
+
+      <div class="projects-grid">
+        {projects.map((project) => (
+          <article class="project-card">
+            <div class="project-content">
+              <h2>{project.title}</h2>
+              <p>{project.description}</p>
+              <ul class="tech-list">
+                {project.tech.map((t) => (
+                  <li>{t}</li>
+                ))}
+              </ul>
+            </div>
+            <div class="project-links">
+              <a href={project.github} target="_blank" rel="noopener noreferrer">
+                GitHub
+              </a>
+              {project.demo && (
+                <a href={project.demo} target="_blank" rel="noopener noreferrer">
+                  Live Demo
+                </a>
+              )}
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .intro {
+    color: var(--text-light);
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin-bottom: 3rem;
+  }
+
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .project-card {
+    background: var(--bg-alt);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+
+  .project-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px -8px rgb(0 0 0 / 0.1);
+  }
+
+  .project-content {
+    flex: 1;
+  }
+
+  .project-card h2 {
+    font-size: 1.25rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .project-card p {
+    color: var(--text-light);
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+    line-height: 1.6;
+  }
+
+  .tech-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    list-style: none;
+    margin-bottom: 1.5rem;
+  }
+
+  .tech-list li {
+    background: white;
+    border: 1px solid var(--border);
+    padding: 0.25rem 0.75rem;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    color: var(--text-light);
+  }
+
+  .project-links {
+    display: flex;
+    gap: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border);
+  }
+
+  .project-links a {
+    font-weight: 500;
+    font-size: 0.9rem;
+  }
+</style>

@@ -4,16 +4,16 @@ import Layout from '../layouts/Layout.astro';
 const skills = ["JavaScript", "TypeScript", "React", "Node.js", "Python", "AWS"];
 ---
 
-<Layout title="Jake Smith - Software Engineer" active="Home">
+<Layout title="Jacob Higdon - Software Engineer" active="Home">
   <section class="hero">
     <div class="container">
       <div class="hero-content">
         <p class="greeting">Hi, I'm</p>
-        <h1>Jake Smith</h1>
+        <h1>Jacob Higdon</h1>
         <h2>Software Engineer</h2>
         <p class="bio">
-          I build things for the web. Passionate about creating elegant solutions
-          to complex problems and crafting exceptional digital experiences.
+          Originally from Louisville, KY — now based in San Francisco.
+          I build things for the web and love turning complex problems into clean, intuitive solutions.
         </p>
         <div class="hero-buttons">
           <a href="/resumewebsite/projects" class="btn btn-primary">View My Work</a>
@@ -28,9 +28,8 @@ const skills = ["JavaScript", "TypeScript", "React", "Node.js", "Python", "AWS"]
       <h2 class="section-title">About Me</h2>
       <div class="about-content">
         <p>
-          I'm a software engineer based in San Francisco with over 5 years of experience
-          building web applications. I enjoy turning complex problems into simple,
-          beautiful, and intuitive solutions.
+          I'm a software engineer based in San Francisco, originally from Louisville, Kentucky.
+          I enjoy turning complex problems into simple, beautiful, and intuitive solutions.
         </p>
         <p>
           When I'm not coding, you'll find me exploring new technologies, contributing
@@ -64,7 +63,7 @@ const skills = ["JavaScript", "TypeScript", "React", "Node.js", "Python", "AWS"]
     min-height: 80vh;
     display: flex;
     align-items: center;
-    background: linear-gradient(135deg, #f5f7fa 0%, #e4e8ec 100%);
+    background: var(--bg);
   }
 
   .hero-content {
@@ -142,7 +141,7 @@ const skills = ["JavaScript", "TypeScript", "React", "Node.js", "Python", "AWS"]
   .cta-box {
     text-align: center;
     padding: 3rem;
-    background: white;
+    background: var(--card-bg);
     border-radius: 12px;
     box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
   }
